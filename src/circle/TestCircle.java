@@ -1,6 +1,7 @@
 package circle;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class TestCircle {
     public static void main(String[] args) {
@@ -18,6 +19,23 @@ public class TestCircle {
         for (ComparableCircle circle1: comparableCircles
              ) {
             System.out.println(circle1);
+        }
+
+        Circle[] circles = new Circle[3];
+        circles[0] = new Circle(3.6);
+        circles[1] = new Circle(4);
+        circles[2] = new Circle(3.5, false, "green");
+        System.out.println("Before sorting");
+        for (Circle c:
+             circles) {
+            System.out.println(c);
+        }
+        Comparator circleComparator = new CircleComparator();
+        Arrays.sort(circles,circleComparator);
+        System.out.println("After sorting");
+        for (int i = 0; i < circles.length; i++) {
+
+            System.out.println(circles[i]);
         }
     }
 }

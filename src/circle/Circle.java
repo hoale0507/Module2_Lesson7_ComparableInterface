@@ -8,6 +8,10 @@ public class Circle {
     public Circle() {
     }
 
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
     public Circle(double radius, boolean filled, String color) {
         this.radius = radius;
         this.filled = filled;
